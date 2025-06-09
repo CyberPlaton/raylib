@@ -1483,6 +1483,17 @@ void SetShaderValueTexture(Shader shader, int locIndex, Texture2D texture)
     }
 }
 
+// Set shader uniform value for texture
+void SetShaderValueTextureId(Shader shader, int locIndex, int textureId)
+{
+	if (locIndex > -1)
+	{
+		rlEnableShader(shader.id);
+		rlSetUniformSampler(locIndex, textureId);
+		//rlDisableShader();
+	}
+}
+
 //----------------------------------------------------------------------------------
 // Module Functions Definition: Screen-space Queries
 //----------------------------------------------------------------------------------
