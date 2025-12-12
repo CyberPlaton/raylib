@@ -1869,7 +1869,10 @@ static void KeyCallback(GLFWwindow *window, int key, int scancode, int action, i
     }
 
     // Check the exit key to set close window
-    if ((key == CORE.Input.Keyboard.exitKey) && (action == GLFW_PRESS)) glfwSetWindowShouldClose(platform.handle, GLFW_TRUE);
+    if ((CORE.Input.Keyboard.exitKey != 0) && (key == CORE.Input.Keyboard.exitKey) && (action == GLFW_PRESS))
+    {
+        glfwSetWindowShouldClose(platform.handle, GLFW_TRUE);
+    }
 }
 
 // GLFW3 Char Callback, get unicode codepoint value
